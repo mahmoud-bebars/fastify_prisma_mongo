@@ -1,0 +1,55 @@
+{
+  "name": "micro-auth",
+  "description": "a microserivce to be used in microserivce architecture for authorization, authentication & user actions.",
+  "main": "server.js",
+  "private": true,
+  "version": "1.0.0",
+  "type": "commonjs",
+  "author": "Mahmoud Bebars - @mahmoud-bebars",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahmoud-bebars/users_micro_service"
+  },
+  "keywords": [
+    "fastify",
+    "microserivce",
+    "authentication",
+    "authorization",
+    "mongo",
+    "prisma",
+    "redis",
+    "crypto"
+  ],
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js | pino-pretty",
+    "clean:node": "rm -rf ./node_modules",
+    "docker:start": "npm run db:roll && npm run start --host 0.0.0.0 --listen debug-level=debug"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "dependencies": {
+    "@fastify/autoload": "^5.8.0",
+    "@fastify/cors": "^8.4.0",
+    "@fastify/formbody": "^7.4.0",
+    "@fastify/helmet": "^11.1.1",
+    "@fastify/jwt": "^7.2.2",
+    "@fastify/multipart": "^8.0.0",
+    "@fastify/rate-limit": "^9.1.0",
+    "@fastify/redis": "^6.1.1",
+    "@fastify/static": "^6.11.2",
+    "@prisma/client": "^5.16.2",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.24.3",
+    "fastify-multer": "^2.0.3",
+    "moment": "^2.29.4",
+    "prisma": "^5.16.2",
+    "sharp": "^0.33.2",
+    "socket.io": "^4.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
